@@ -1,4 +1,4 @@
-# dubbo-arch
+# dubbo-arch ![logo](http://dcits.com/statics/images/dcits/logo.png)
 -------------------
 
 ## Introduction
