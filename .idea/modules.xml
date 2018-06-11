@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/annotation-module/annotation-module.iml" filepath="$PROJECT_DIR$/annotation-module/annotation-module.iml" />
       <module fileurl="file://$PROJECT_DIR$/brave-dubbo/brave-dubbo.iml" filepath="$PROJECT_DIR$/brave-dubbo/brave-dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-arch.iml" filepath="$PROJECT_DIR$/dubbo-arch.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-client/dubbo-client.iml" filepath="$PROJECT_DIR$/dubbo-client/dubbo-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-provider/dubbo-provider.iml" filepath="$PROJECT_DIR$/dubbo-provider/dubbo-provider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dubbo-provider-bar/dubbo-provider (1).iml" filepath="$PROJECT_DIR$/dubbo-provider-bar/dubbo-provider (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-provider-bar/dubbo-provider-bar.iml" filepath="$PROJECT_DIR$/dubbo-provider-bar/dubbo-provider-bar.iml" />
       <module fileurl="file://$PROJECT_DIR$/jetty-server/jetty-server.iml" filepath="$PROJECT_DIR$/jetty-server/jetty-server.iml" />
     </modules>

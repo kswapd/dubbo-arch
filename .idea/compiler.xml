@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="annotation-module" />
         <module name="brave-dubbo" />
         <module name="commons" />
         <module name="dubbo-client" />
@@ -16,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="annotation-module" target="1.5" />
       <module name="brave-dubbo" target="1.7" />
       <module name="commons" target="1.5" />
       <module name="dubbo-arch" target="1.5" />

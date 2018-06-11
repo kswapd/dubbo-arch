@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/brave-dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/annotation-module/pom.xml" />
       </list>
     </option>
   </component>
