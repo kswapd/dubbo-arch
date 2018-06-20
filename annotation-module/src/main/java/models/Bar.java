@@ -1,15 +1,25 @@
 package models;
 
 
+import annotations.MyColumn;
 import annotations.MyMeasurement;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by kongxiangwen on 5/30/18 w:22.
  */
 
+@Component("bar")
 @MyMeasurement(name="hi,annotation")
 public class Bar {
+
+	@Resource(name="foo")
+	private Foo foo;
+	@MyColumn(name="col_name")
 	private  String name = "test";
+
+	@MyColumn(name="col_name")
 	private int age;
 
 	public String getName() {
@@ -26,5 +36,18 @@ public class Bar {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public void sayNameByFoo()
+	{
+		foo.sayName();
+	}
+	@Override
+	public String toString() {
+		return "Bar{" +
+				"foo=" + foo +
+				", name='" + name + '\'' +
+				", age=" + age +
+				'}';
 	}
 }
