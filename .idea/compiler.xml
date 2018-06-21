@@ -7,7 +7,7 @@
         <outputRelativeToContentRoot value="true" />
       </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="annt" />
+        <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="annotation-module" />
@@ -28,7 +28,7 @@
       <module name="dubbo-client" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
       <module name="dubbo-provider-bar" target="1.5" />
-      <module name="jetty-server" target="1.5" />
+      <module name="jetty-server" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

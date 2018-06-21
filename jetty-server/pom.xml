@@ -92,7 +92,11 @@
         </dependency>-->
 
 
-
+        <dependency>
+            <groupId>dcits</groupId>
+            <artifactId>annotation-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
@@ -106,6 +110,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
