@@ -1,6 +1,7 @@
 package models;
 
 
+import annotations.BeanBuilder;
 import annotations.MyColumn;
 import annotations.MyMeasurement;
 import javax.annotation.Resource;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component("bar")
 @MyMeasurement(name="hi,annotation")
+@BeanBuilder
 public class Bar {
 
 	@Resource(name="foo")

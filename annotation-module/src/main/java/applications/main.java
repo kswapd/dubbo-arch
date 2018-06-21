@@ -23,6 +23,8 @@ public class main {
 		System.out.println("test self annotation------");
 
 		Bar bar = null;
+		Bar bb = new Bar();
+		//bb.getClass() = Bar.class
 		AnnotationMapper mapper = new AnnotationMapper();
 		bar = mapper.toPOJO(Bar.class, mapValue);
 		System.out.println(bar.toString());

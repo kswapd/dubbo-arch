@@ -2,8 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <sourceOutputDir name="ann" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceOutputDir name="annt" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="annotation-module" />
@@ -16,17 +20,14 @@
         <module name="jetty-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="annotation-module" target="1.5" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="annotation-module" target="1.7" />
       <module name="brave-dubbo" target="1.7" />
       <module name="commons" target="1.5" />
       <module name="dubbo-arch" target="1.5" />
       <module name="dubbo-client" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
-      <module name="dubbo-provider (1)" target="1.5" />
       <module name="dubbo-provider-bar" target="1.5" />
-      <module name="dubbo-provider2" target="1.5" />
-      <module name="dubbo-zipkin-spring-starter" target="1.7" />
       <module name="jetty-server" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -5,6 +5,7 @@ import annotations.MyMeasurement;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -51,10 +52,17 @@ public class AnnotationMapper {
 
 
 
-	public <T> void setClassFields(T obj, Map<String, Object>mapValue, final Class<?>... classVarAgrs) throws IllegalArgumentException, IllegalAccessException
+	//public <T> void setClassFields(T obj, Map<String, Object>mapValue, final Class<?>... classVarAgrs) throws IllegalArgumentException, IllegalAccessException
+	public <T> void setClassFields(T obj, Map<String, Object>mapValue) throws IllegalArgumentException, IllegalAccessException
 	{
 
-		for (Class<?> clazz : classVarAgrs) {
+		//List<?> li = new ArrayList<String>();
+		//li.add("aaa");
+
+
+		//for (Class<?> clazz : classVarAgrs)
+		Class<?> clazz = obj.getClass();
+		{
 			System.out.println(clazz.getName());
 			for (Field field : clazz.getDeclaredFields()) {
 			/*Column colAnnotation = field.getAnnotation(Column.class);
@@ -166,7 +174,9 @@ public class AnnotationMapper {
 			//Field field = MyClass.class.getField("count"); //获取域
 			//System.out.println("Reflect -> " + field.getInt(myClassReflect)); //获取域的值
 
-			setClassFields(myClassReflect, mapValue, clazz);
+			//setClassFields(myClassReflect, mapValue, clazz);
+
+			setClassFields(myClassReflect, mapValue);
 
 		} catch (Exception e) {
 			e.printStackTrace();

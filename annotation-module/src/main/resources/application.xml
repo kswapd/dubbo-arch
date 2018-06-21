@@ -10,6 +10,6 @@
     http://code.alibabatech.com/schema/dubbo
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!--<context:annotation-config/>-->
-    <context:component-scan base-package="models"></context:component-scan>
+    <context:component-scan base-package="annotations,models"></context:component-scan>
 
 </beans>
