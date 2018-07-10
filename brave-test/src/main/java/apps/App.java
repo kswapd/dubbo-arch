@@ -82,53 +82,35 @@ public class App {
 
 			//serverRequestInterceptor.handle(new ServerRequestAdapterImpl("group_data"));
 
-			ClientRequestAdapterImpl clientRequestAdapterImpl = new ClientRequestAdapterImpl("get_radio_list");
-			clientRequestInterceptor.handle(clientRequestAdapterImpl);
+			/*ClientRequestAdapterImpl clientRequestAdapterImpl = new ClientRequestAdapterImpl("all");
+			clientRequestInterceptor.handle(clientRequestAdapterImpl);*/
 			//queue.offer(new Task("get_radio_list", clientRequestAdapterImpl.getSpanId()));
 
 
 
-			serverRequestInterceptor.handle(new ServerRequestAdapterImpl("oooo", clientRequestAdapterImpl.getSpanId()));
-			Thread.sleep(50);
-			serverResponseInterceptor.handle(new ServerResponseAdapterImpl());
-
-			Thread.sleep(10);
-			clientResponseInterceptor.handle(new ClientResponseAdapterImpl());
 
 
+			serverRequestInterceptor.handle(new ServerRequestAdapterImpl("group_data"));
 
-			serverRequestInterceptor.handle(new ServerRequestAdapterImpl("bbbbb", clientRequestAdapterImpl.getSpanId()));
-			Thread.sleep(150);
-			serverResponseInterceptor.handle(new ServerResponseAdapterImpl());
-
-
-
-
-
-
-
-			Thread.sleep(10);
-			clientResponseInterceptor.handle(new ClientResponseAdapterImpl());
-
-
-
-
-
-
-
-			/*clientRequestAdapterImpl = new ClientRequestAdapterImpl("get_user_list");
+			ClientRequestAdapterImpl clientRequestAdapterImpl = new ClientRequestAdapterImpl("get_user_list");
 			clientRequestInterceptor.handle(clientRequestAdapterImpl);
 			queue.offer(new Task("get_user_list", clientRequestAdapterImpl.getSpanId()));
-			Thread.sleep(40);
+			Thread.sleep(50);
 			clientResponseInterceptor.handle(new ClientResponseAdapterImpl());
+
 
 			clientRequestAdapterImpl = new ClientRequestAdapterImpl("get_program_list");
 			clientRequestInterceptor.handle(clientRequestAdapterImpl);
 			queue.offer(new Task("get_program_list", clientRequestAdapterImpl.getSpanId()));
-			Thread.sleep(10);
+			Thread.sleep(50);
 			clientResponseInterceptor.handle(new ClientResponseAdapterImpl());
-*/
+
+
+			serverResponseInterceptor.handle(new ServerResponseAdapterImpl());
 			//serverResponseInterceptor.handle(new ServerResponseAdapterImpl());
+
+
+
 		}
 		Thread.sleep(3000);
 	}
@@ -136,7 +118,16 @@ public class App {
 	public static void dcHandle(String spanName, SpanId spanId){
 		ServerRequestInterceptor serverRequestInterceptor = brave2.serverRequestInterceptor();
 		ServerResponseInterceptor serverResponseInterceptor = brave2.serverResponseInterceptor();
+
+
 		serverRequestInterceptor.handle(new ServerRequestAdapterImpl(spanName, spanId));
+
+		try {
+			Thread.sleep(40);
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		serverResponseInterceptor.handle(new ServerResponseAdapterImpl());
 	}
 
