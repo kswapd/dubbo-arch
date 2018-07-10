@@ -38,7 +38,7 @@
                      interface="interfaces.BarService"
                      protocol="dubbo" />
 
-    <bean id="brave" class="com.github.kristofa.brave.dubbo.BraveFactoryBean">
+    <!--<bean id="brave" class="com.github.kristofa.brave.dubbo.BraveFactoryBean">
 
         <property name="serviceName">
             <value>helloworld-provider</value>
@@ -49,5 +49,5 @@
         <property name="rate">
             <value>${zipkin.sampleRate}</value>
         </property>
-    </bean>
+    </bean>-->
 </beans>

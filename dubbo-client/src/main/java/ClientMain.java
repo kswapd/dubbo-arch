@@ -22,13 +22,13 @@ public class ClientMain {
 		System.out.println(service.sayHello("hello"));
 
 
-		FooService foo = (FooService) context.getBean("fooService");
+		/*FooService foo = (FooService) context.getBean("fooService");
 		System.out.println(foo.sayFoo("world "));
 
 
 		BarService bar = (BarService) context.getBean("barService");
 		System.out.println(bar.sayBar("world "));
-
+*/
 
 		//Book bb = (Book) context.getBean("mybooks");
 
