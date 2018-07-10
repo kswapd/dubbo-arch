@@ -10,6 +10,7 @@ public class BraveDubboManagementBean {
     public Brave brave;
 
     public BraveDubboManagementBean(Brave brave) {
+
         this.brave = brave;
         BraveConsumerFilter.setBrave(brave);
         BraveProviderFilter.setBrave(brave);

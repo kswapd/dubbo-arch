@@ -11,21 +11,11 @@
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <context:property-placeholder location="classpath*:commons.properties" />
 
-    <bean id="brave" class="com.github.kristofa.brave.dubbo.BraveFactoryBean">
 
-        <property name="serviceName">
-            <value>helloworld-provider</value>
-        </property>
-        <property name="zipkinHost">
-            <value>${zipkin.address}:${zipkin.port}/</value>
-        </property>
-        <property name="rate">
-            <value>${zipkin.sampleRate}</value>
-        </property>
-    </bean>
 
 
 
     <!-- 引入服务提供者配置文件 -->
     <import resource="classpath:dubbo.xml" />
+
 </beans>

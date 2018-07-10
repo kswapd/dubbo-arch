@@ -18,7 +18,7 @@ public class FooServiceImpl implements FooService {
 		BarService bar = (BarService) context.getBean("barService");
 		String barStr = bar.sayBar("bar");
 
-		return "foo dubbo provider " + barStr + " " + name;
+		return "foo dubbo foo provider "  + name;
 	}
 
 }

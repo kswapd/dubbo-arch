@@ -18,7 +18,7 @@
             <value>helloworld-provider-bar</value>
         </property>
         <property name="zipkinHost">
-            <value>${zipkin.address}:${zipkin.port}/</value>
+            <value>http://${zipkin.address}:${zipkin.port}/</value>
         </property>
         <property name="rate">
             <value>${zipkin.sampleRate}</value>

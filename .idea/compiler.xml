@@ -12,6 +12,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="annotation-module" />
         <module name="brave-dubbo" />
+        <module name="brave-test" />
         <module name="commons" />
         <module name="dubbo-client" />
         <module name="dubbo-provider" />
@@ -20,15 +21,16 @@
         <module name="jetty-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
-      <module name="annotation-module" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="annotation-module" target="1.5" />
       <module name="brave-dubbo" target="1.7" />
+      <module name="brave-test" target="1.5" />
       <module name="commons" target="1.5" />
       <module name="dubbo-arch" target="1.5" />
       <module name="dubbo-client" target="1.5" />
       <module name="dubbo-provider" target="1.5" />
       <module name="dubbo-provider-bar" target="1.5" />
-      <module name="jetty-server" target="1.7" />
+      <module name="jetty-server" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

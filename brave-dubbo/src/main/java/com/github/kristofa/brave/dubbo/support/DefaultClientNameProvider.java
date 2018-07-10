@@ -15,9 +15,13 @@ import com.github.kristofa.brave.internal.Nullable;
 public class DefaultClientNameProvider implements DubboClientNameProvider {
     @Override
     public String resolveClientName(RpcContext rpcContext) {
-        String application = RpcContext.getContext().getUrl().getParameter("application");
+        //kxw type
+        //String application = RpcContext.getContext().getUrl().getParameter("application");
+       String application = RpcContext.getContext().getAttachment("clientName");
         //String application = RpcContext.getContext().getUrl().getParameter("clientName");
-        
+        //String application = RpcContext.getContext().getUrl().getParameter("clientName");
+
+        //String application = RpcContext.getContext().getUrl().getParameter("clientName");
         return application;
     }
 }

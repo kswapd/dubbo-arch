@@ -49,6 +49,7 @@ public class BraveFactoryBean implements FactoryBean<Brave> {
         if (this.serviceName == null) {
             throw new BeanInitializationException("Property serviceName must be set.");
         }
+
         Brave.Builder builder = new Brave.Builder(this.serviceName);
         if (this.zipkinHost != null && !"".equals(this.zipkinHost)) {
             builder.spanCollector(HttpSpanCollector.create(this.zipkinHost, new EmptySpanCollectorMetricsHandler())).traceSampler(Sampler.create(rate)).build();
@@ -57,6 +58,7 @@ public class BraveFactoryBean implements FactoryBean<Brave> {
             builder.spanCollector(new LoggingSpanCollector()).traceSampler(Sampler.create(rate)).build();
             LOGGER.info("brave dubbo config collect whith loggingSpanColletor , rate is "+ rate);
         }
+        System.out.println("creating brave------");
         this.instance = builder.build();
     }
 

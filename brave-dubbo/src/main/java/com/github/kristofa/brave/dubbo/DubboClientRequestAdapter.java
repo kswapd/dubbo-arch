@@ -4,6 +4,7 @@ import com.alibaba.dubbo.rpc.Invocation;
 import com.alibaba.dubbo.rpc.Invoker;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.github.kristofa.brave.*;
+import com.github.kristofa.brave.dubbo.support.DefaultClientNameProvider;
 import com.github.kristofa.brave.dubbo.support.DefaultServerNameProvider;
 import com.github.kristofa.brave.dubbo.support.DefaultSpanNameProvider;
 import com.github.kristofa.brave.internal.Nullable;
@@ -21,6 +22,7 @@ public class DubboClientRequestAdapter implements ClientRequestAdapter {
     private Invocation invocation;
     private final static DubboSpanNameProvider spanNameProvider = new DefaultSpanNameProvider();
     private final static DubboServerNameProvider serverNameProvider = new DefaultServerNameProvider();
+    private final static  DubboClientNameProvider clientNameProvider = new DefaultClientNameProvider();
 
 
     public DubboClientRequestAdapter(Invoker<?> invoker, Invocation invocation) {
@@ -32,7 +34,7 @@ public class DubboClientRequestAdapter implements ClientRequestAdapter {
     public String getSpanName() {
 
         String name = spanNameProvider.resolveSpanName(RpcContext.getContext());
-        //System.out.println("span name-----" + name);
+       // String name = serverNameProvider.resolveServerName(RpcContext.getContext());
         return name;
 
     }

@@ -26,6 +26,7 @@ public class DubboServerRequestAdapter  implements ServerRequestAdapter {
     private ServerTracer serverTracer;
     private final static  DubboSpanNameProvider spanNameProvider = new DefaultSpanNameProvider();
     private final static  DubboClientNameProvider clientNameProvider = new DefaultClientNameProvider();
+    private final static DubboServerNameProvider serverNameProvider = new DefaultServerNameProvider();
 
 
 
@@ -55,7 +56,10 @@ public class DubboServerRequestAdapter  implements ServerRequestAdapter {
 
     @Override
     public String getSpanName() {
-        return spanNameProvider.resolveSpanName(RpcContext.getContext());
+        String spanName = spanNameProvider.resolveSpanName(RpcContext.getContext());
+        //String spanName = clientNameProvider.resolveClientName(RpcContext.getContext());
+        //String spanName = serverNameProvider.resolveServerName(RpcContext.getContext());
+        return spanName;
     }
 
     @Override
@@ -66,6 +70,7 @@ public class DubboServerRequestAdapter  implements ServerRequestAdapter {
         final String clientName = clientNameProvider.resolveClientName(RpcContext.getContext());
 
         serverTracer.setServerReceived(IPConversion.convertToInt(ipAddr),inetSocketAddress.getPort(),clientName);
+
 
         InetSocketAddress socketAddress = RpcContext.getContext().getLocalAddress();
         if (socketAddress != null) {

@@ -22,29 +22,17 @@ public class ClientMain {
 		System.out.println(service.sayHello("hello"));
 
 
-		/*FooService foo = (FooService) context.getBean("fooService");
+		FooService foo = (FooService) context.getBean("fooService");
 		System.out.println(foo.sayFoo("world "));
 
 
 		BarService bar = (BarService) context.getBean("barService");
 		System.out.println(bar.sayBar("world "));
-		*/
+
 
 		//Book bb = (Book) context.getBean("mybooks");
 
 
-		SuperBook bb = (SuperBook) context.getBean("superBook");
-		System.out.println("book infor from spring:"+bb.bk.getAuthor());
-
-		SuperBook.test();
-		StaticTest.stest.sprt();
-		StaticTest.stest ss = new StaticTest.stest();
-		ss.prt();
-		/* wrong
-		SuperBook bbb = new SuperBook();
-		System.out.println(bbb.bk.getAuthor());
-		System.out.println("dddd");
-		*/
 		context.close();
 	}
 }
