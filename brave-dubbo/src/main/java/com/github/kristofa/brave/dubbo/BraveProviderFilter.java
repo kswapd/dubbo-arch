@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import jdk.internal.instrumentation.Tracer;
+
 
 import static com.github.kristofa.brave.IdConversion.convertToLong;
 
@@ -38,7 +38,7 @@ import static com.github.kristofa.brave.IdConversion.convertToLong;
     ServerRequestAdapterImpl(String spanName, SpanId spanId){
         this.spanName = spanName;
         this.spanId = spanId;
-    }
+}
 
     @Override
     public TraceData getTraceData() {

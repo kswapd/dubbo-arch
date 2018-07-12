@@ -21,16 +21,16 @@
         <module name="jetty-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="annotation-module" target="1.8" />
-      <module name="brave-dubbo" target="1.8" />
-      <module name="brave-test" target="1.8" />
-      <module name="commons" target="1.8" />
-      <module name="dubbo-arch" target="1.8" />
-      <module name="dubbo-client" target="1.8" />
-      <module name="dubbo-provider" target="1.8" />
-      <module name="dubbo-provider-bar" target="1.8" />
-      <module name="jetty-server" target="1.8" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="annotation-module" target="1.7" />
+      <module name="brave-dubbo" target="1.7" />
+      <module name="brave-test" target="1.7" />
+      <module name="commons" target="1.7" />
+      <module name="dubbo-arch" target="1.7" />
+      <module name="dubbo-client" target="1.7" />
+      <module name="dubbo-provider" target="1.7" />
+      <module name="dubbo-provider-bar" target="1.7" />
+      <module name="jetty-server" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
