@@ -17,67 +17,6 @@ import static com.github.kristofa.brave.IdConversion.convertToLong;
  * Created by chenjg on 16/7/24.
  */
 
- class ServerRequestAdapterImpl implements ServerRequestAdapter {
-
-    Random randomGenerator = new Random();
-    SpanId spanId;
-    String spanName;
-    public static SpanId getSpanId(String traceId, String spanId, String parentSpanId) {
-        return SpanId.builder()
-                .traceId(convertToLong(traceId))
-                .spanId(convertToLong(spanId))
-                .parentId(parentSpanId == null ? null : convertToLong(parentSpanId)).build();
-    }
-    ServerRequestAdapterImpl(String spanName){
-        this.spanName = spanName;
-        long startId = randomGenerator.nextLong();
-        SpanId spanId = SpanId.builder().spanId(startId).traceId(startId).parentId(startId).build();
-        this.spanId = spanId;
-    }
-
-    ServerRequestAdapterImpl(String spanName, SpanId spanId){
-        this.spanName = spanName;
-        this.spanId = spanId;
-}
-
-    @Override
-    public TraceData getTraceData() {
-        if (this.spanId != null) {
-            return TraceData.builder().spanId(this.spanId).build();
-        }
-        long startId = randomGenerator.nextLong();
-        SpanId spanId = SpanId.builder().spanId(startId).traceId(startId).parentId(startId).build();
-        return TraceData.builder().spanId(spanId).build();
-    }
-
-    @Override
-    public String getSpanName() {
-        return spanName;
-    }
-
-    @Override
-    public Collection<KeyValueAnnotation> requestAnnotations() {
-        Collection<KeyValueAnnotation> collection = new ArrayList<KeyValueAnnotation>();
-        KeyValueAnnotation kv = KeyValueAnnotation.create("radioid", "165646485468486364");
-        collection.add(kv);
-        return collection;
-    }
-
-}
-
- class ServerResponseAdapterImpl implements ServerResponseAdapter {
-
-    @Override
-    public Collection<KeyValueAnnotation> responseAnnotations() {
-        Collection<KeyValueAnnotation> collection = new ArrayList<KeyValueAnnotation>();
-        KeyValueAnnotation kv = KeyValueAnnotation.create("radioid", "165646485468486364");
-        collection.add(kv);
-        return collection;
-    }
-
-}
-
-
 @Activate(group = Constants.PROVIDER)
 public class BraveProviderFilter implements Filter {
 

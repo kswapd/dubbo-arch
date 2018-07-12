@@ -46,6 +46,7 @@ public class App {
 
 		brave2 = new Brave.Builder("datacenter").spanCollector(collector).build();
 
+
 	}
 
 	static class Task {

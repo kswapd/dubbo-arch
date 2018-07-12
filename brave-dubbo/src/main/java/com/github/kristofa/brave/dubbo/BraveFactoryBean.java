@@ -6,10 +6,12 @@ import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.beans.factory.FactoryBean;
 
 import java.util.logging.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by jack-cooper on 2017/2/20.
  */
+@Component
 public class BraveFactoryBean implements FactoryBean<Brave> {
     private static final Logger LOGGER = Logger.getLogger(BraveFactoryBean.class.getName());
     /**服务名*/
@@ -58,7 +60,6 @@ public class BraveFactoryBean implements FactoryBean<Brave> {
             builder.spanCollector(new LoggingSpanCollector()).traceSampler(Sampler.create(rate)).build();
             LOGGER.info("brave dubbo config collect whith loggingSpanColletor , rate is "+ rate);
         }
-        System.out.println("creating brave------");
         this.instance = builder.build();
     }
 

@@ -62,11 +62,12 @@ public class DubboClientRequestAdapter implements ClientRequestAdapter {
 
     @Override
     public Endpoint serverAddress() {
-        InetSocketAddress inetSocketAddress = RpcContext.getContext().getRemoteAddress();
+        /*InetSocketAddress inetSocketAddress = RpcContext.getContext().getRemoteAddress();
         String ipAddr = RpcContext.getContext().getUrl().getIp();
         String serverName = serverNameProvider.resolveServerName(RpcContext.getContext());
-        //System.out.println("server name.....:" + serverName);
-        return Endpoint.create(serverName, IPConversion.convertToInt(ipAddr),inetSocketAddress.getPort());
+        System.out.println("server name.....:" + serverName);
+        return Endpoint.create(serverName, IPConversion.convertToInt(ipAddr),inetSocketAddress.getPort());*/
+        return null;
     }
 
 

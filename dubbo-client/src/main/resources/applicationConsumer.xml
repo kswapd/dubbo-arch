@@ -10,8 +10,7 @@
     http://code.alibabatech.com/schema/dubbo
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!--<context:annotation-config/>-->
-    <context:component-scan base-package="models"></context:component-scan>
-
+    <context:component-scan base-package="models,com.dcits.brave.tracers"></context:component-scan>
 
     <context:property-placeholder location="classpath*:commons.properties" />
 
