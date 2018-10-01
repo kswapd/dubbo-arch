@@ -1,6 +1,5 @@
 # dubbo-arch 
 -------------------
-![logo](http://dcits.com/statics/images/dcits/logo.png)
 
 ## Introduction
  `dubbo` distributed system traced by zipkin server, which is based on [Google Dapper](http://research.google.com/pubs/pub36356.html) paper
